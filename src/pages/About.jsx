@@ -4,6 +4,11 @@ import { useNavigate } from 'react-router-dom';
 
 const About = () => {
   const navigate=useNavigate();
+  const handleButtonClick = () => {
+    navigate('/doctors'); // Navigate to doctors page
+    window.scrollTo(0, 0); // Scroll to top of the page
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-50 to-blue-100 p-10 flex flex-col items-center justify-center">
       <h1 className="text-5xl font-extrabold text-primary mb-6 animate-fadeIn tracking-wide">
@@ -43,16 +48,15 @@ const About = () => {
         <img
           src={assets.about_image}
           alt="Hospital"
-          className="w-full lg:w-1/2 rounded-xl shadow-lg hover:shadow-2xl transition-shadow animate-slideInRight"
-        />
+          className="w-full lg:w-1/2 rounded-xl shadow-lg hover:shadow-2xl transition-shadow animate-slideInRight"/>
       </div>
 
       <button
-          onClick={() => {`navigate('/doctors')`,scrollTo(0,0)}}
-          className="mt-10 bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 hover:shadow-lg transition-transform transform hover:-translate-y-1"
-        >
-          Book an Appointment
-        </button>
+        onClick={handleButtonClick} // Trigger the function on button click
+        className="bg-primary text-gray-100 px-12 py-3 rounded-lg mt-10 hover:bg-blue-700 transition-all"
+      >
+        Book an Appointment
+      </button>
     </div>
   );
 };
