@@ -52,7 +52,7 @@ const RelatedDoctor = ({ speciality, docId }) => {
       <button 
         onClick={() => {
           navigate('/doctors');
-          scrollTo(0, 0);
+          scroll(0, 0);
         }} 
         className="bg-blue-100 text-gray-600 px-12 py-3 rounded-lg mt-10"
       >
